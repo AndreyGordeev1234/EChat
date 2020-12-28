@@ -1,0 +1,10 @@
+@import '../../styles/variables';
+
+.dialogs {
+  background-color: $background-primary;
+  border-radius: 14px 14px 0px 0px;
+
+  &__wrapper {
+    padding: 24px 20px;
+  }
+}
