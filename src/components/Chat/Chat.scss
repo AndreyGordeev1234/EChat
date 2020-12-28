@@ -1,0 +1,15 @@
+@import '../../styles/variables';
+
+.chat {
+  &__header {
+    margin-top: 30px;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    line-height: 18px;
+    color: $text-secondary;
+  }
+}

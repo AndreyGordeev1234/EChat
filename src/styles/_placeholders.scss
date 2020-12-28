@@ -1,0 +1,28 @@
+%button-as-div {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  height: fit-content;
+  cursor: pointer;
+  text-align: start;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+%image-center {
+  height: 100%;
+  background: {
+    position: center;
+    size: cover;
+    repeat: no-repeat;
+  }
+}
+
+%profile-image-container {
+  overflow: hidden;
+  background-blend-mode: normal;
+  border: 2px solid #ff9b26;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}

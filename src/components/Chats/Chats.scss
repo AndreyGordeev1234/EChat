@@ -1,0 +1,7 @@
+@import '../../styles/variables';
+
+.chats {
+  display: grid;
+  grid-template-rows: 100px 1fr;
+  row-gap: 10px;
+}

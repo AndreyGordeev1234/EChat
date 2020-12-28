@@ -1,0 +1,64 @@
+@import '../../styles/variables';
+@import '../../styles/placeholders';
+
+.dialog {
+  @extend %button-as-div;
+  display: flex;
+  padding: 15px;
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+
+  &_active {
+    background-color: $background-secondary;
+    box-shadow: 0px 8px 40px rgba(0, 72, 251, 0.3);
+    border-radius: 14px;
+    color: $text-ternary;
+  }
+
+  &__image {
+    @extend %profile-image-container;
+  }
+
+  &__img {
+    @extend %image-center;
+  }
+
+  &__info {
+    padding-left: 15px;
+  }
+
+  &__name {
+    font-weight: 600;
+    line-height: 18px;
+    margin-top: 2px;
+  }
+
+  &__text {
+    margin-top: 3px;
+    font: {
+      size: 10px;
+      weight: 300;
+    }
+    line-height: 15px;
+  }
+
+  &__time {
+    font: {
+      family: $font-secondary;
+      size: 10px;
+    }
+    position: absolute;
+    right: 15px;
+    color: $text-quaternary;
+    line-height: 12px;
+
+    &_active {
+      color: $text-secondary;
+    }
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
