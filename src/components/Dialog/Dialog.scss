@@ -12,7 +12,7 @@
   &_active {
     background-color: $background-secondary;
     box-shadow: 0px 8px 40px rgba(0, 72, 251, 0.3);
-    border-radius: 14px;
+    border-radius: $border-radius;
     color: $text-ternary;
   }
 

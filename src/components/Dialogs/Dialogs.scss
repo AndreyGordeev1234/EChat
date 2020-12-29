@@ -2,7 +2,8 @@
 
 .dialogs {
   background-color: $background-primary;
-  border-radius: 14px 14px 0px 0px;
+  border-radius: $border-radius $border-radius 0px 0px;
+  overflow-y: auto;
 
   &__wrapper {
     padding: 24px 20px;

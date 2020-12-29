@@ -6,7 +6,7 @@
   padding-left: 35px;
   padding-top: 30px;
   background-color: $background-primary;
-  border-radius: 0px 0px 14px 14px;
+  border-radius: 0px 0px $border-radius $border-radius;
   position: relative;
 
   &__image {
@@ -37,7 +37,7 @@
     background-color: $background-secondary;
     display: flex;
     align-items: center;
-    border-radius: 14px;
+    border-radius: $border-radius;
     padding: 3px 6px;
     position: relative;
 
