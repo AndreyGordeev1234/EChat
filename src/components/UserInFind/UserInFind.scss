@@ -1,0 +1,33 @@
+@import '../../styles/variables';
+@import '../../styles/placeholders';
+
+.user-find {
+  @extend %button-as-div;
+  display: flex;
+  padding: 15px;
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+
+  &__image {
+    @extend %profile-image-container;
+  }
+
+  &__img {
+    @extend %image-center;
+  }
+
+  &__info {
+    padding-left: 25px;
+    align-self: center;
+  }
+
+  &__name {
+    font-weight: 600;
+    line-height: 18px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}

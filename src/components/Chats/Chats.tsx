@@ -1,15 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ChatsNav from '../ChatsNav';
 import Dialogs from '../Dialogs';
+import Find from '../Find';
 import Profile from '../Profile';
 import './Chats.scss';
 
 interface Props {}
 
+export type ActivePage = 'Dialogs' | 'Find';
+
 export const Chats: React.FC<Props> = ({}) => {
+  const [page, setPage] = useState<ActivePage>('Dialogs');
+  const setActivePage = (page: ActivePage) => {
+    setPage(page);
+  };
+
   return (
     <div className="chats">
       <Profile />
-      <Dialogs />
+      <div></div>
+      {page === 'Dialogs' ? <Dialogs /> : <Find />}
+      <ChatsNav active={page} onSetActive={setActivePage} />
     </div>
   );
 };
