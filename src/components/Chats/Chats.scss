@@ -2,6 +2,5 @@
 
 .chats {
   display: grid;
-  grid-template-rows: 100px 1fr;
-  row-gap: 10px;
+  grid-template-rows: 100px 10px 1fr 85px;
 }

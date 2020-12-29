@@ -1,17 +1,25 @@
 import React from 'react';
 import './Profile.scss';
-import profilePic from '../../assets/images/profile-picture.png';
+import { useSelector } from 'react-redux';
+import { State } from '../../reducers/types';
 
 interface Props {}
 
 export const Profile: React.FC<Props> = ({}) => {
+  const user = useSelector((state) => (state as State).user.user);
+
   return (
     <div className="chats__top profile">
-      <div className="profile__image">
-        <img src={profilePic} alt="Profile image" className="profile__img" />
-      </div>
+      <div
+        className="profile__image"
+        style={{
+          backgroundImage: `url(${user?.photoUrl})`,
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+        }}
+      ></div>
       <div className="profile__details">
-        <p className="profile__name">Mehmet Revnaki</p>
+        <p className="profile__name">{user?.name}</p>
         <button className="profile__status">
           <div
             className="profile__status-indicator"
