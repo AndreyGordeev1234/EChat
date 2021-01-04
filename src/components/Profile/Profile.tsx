@@ -14,8 +14,6 @@ export const Profile: React.FC<Props> = ({}) => {
         className="profile__image"
         style={{
           backgroundImage: `url(${user?.photoUrl})`,
-          backgroundPosition: 'center',
-          backgroundSize: 'cover',
         }}
       ></div>
       <div className="profile__details">

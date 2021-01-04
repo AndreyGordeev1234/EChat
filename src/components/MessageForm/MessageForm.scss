@@ -1,0 +1,60 @@
+@import '../../styles/variables';
+
+.chat {
+  &__fields {
+    position: relative;
+  }
+
+  &__field {
+    width: 100%;
+    padding-right: 112px;
+    border: 1px solid rgba(150, 169, 186, 0.7);
+    box-sizing: border-box;
+    border-radius: $border-radius;
+    background: #fdfdfd;
+    height: 40px;
+    padding: 11px 112px 11px 11px;
+    font-weight: 300;
+    line-height: 18px;
+    outline: none;
+
+    &::placeholder {
+      color: $text-quaternary;
+    }
+
+    &:focus {
+      border: 1px solid rgb(116, 131, 145);
+    }
+  }
+
+  &__submit {
+    width: 108px;
+    padding: 11px 55px 11px 22px;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    border-radius: $border-radius;
+    border: none;
+    background-color: $background-secondary;
+    font-weight: 600;
+    color: $text-secondary;
+    cursor: pointer;
+
+    &:disabled {
+      cursor: default;
+      background-color: lighten($color: $background-secondary, $amount: 15%);
+    }
+
+    &::after {
+      display: block;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      content: '';
+      background: url(../../assets/images/svg/send-icon.svg) center no-repeat;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

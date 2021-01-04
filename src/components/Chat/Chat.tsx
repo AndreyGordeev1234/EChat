@@ -1,10 +1,16 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { State } from '../../reducers/types';
+import MessageForm from '../MessageForm';
 import Messages from '../Messages';
 import './Chat.scss';
 
 interface Props {}
 
 export const Chat: React.FC<Props> = ({}) => {
+  const dialog = useSelector((state) => (state as State).messages.dialog);
+  const loading = useSelector((state) => (state as State).messages.loading);
+
   return (
     <div className="chat">
       <div className="chat__wrapper">
@@ -13,19 +19,13 @@ export const Chat: React.FC<Props> = ({}) => {
         </header>
         <main className="chat__main">
           <Messages />
-          <form className="chat__form">
-            <p className="chat__fields">
-              <input
-                type="text"
-                name="message"
-                className="chat__field"
-                placeholder="Type a new message..."
-              />
-              <button type="submit" className="chat__submit">
-                Send
-              </button>
-            </p>
-          </form>
+          {dialog ? (
+            <MessageForm />
+          ) : loading ? (
+            <div>Loading...</div>
+          ) : (
+            <div>No dialog loaded...</div>
+          )}
         </main>
       </div>
     </div>

@@ -16,7 +16,7 @@ const initialState: UserState = {
 export const userReducer = (
   state: UserState = initialState,
   action: UserActionTypes,
-) => {
+): UserState => {
   switch (action.type) {
     case FETCH_AUTH_REQUEST:
       return {

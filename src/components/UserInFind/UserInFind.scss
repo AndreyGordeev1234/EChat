@@ -13,10 +13,6 @@
     @extend %profile-image-container;
   }
 
-  &__img {
-    @extend %image-center;
-  }
-
   &__info {
     padding-left: 25px;
     align-self: center;

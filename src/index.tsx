@@ -16,6 +16,8 @@ firebase.initializeApp({
   appId: '1:875853984653:web:fcdffab894b219f982c3c4',
 });
 
+firebase.firestore().enablePersistence();
+
 const auth = firebase.auth();
 
 ReactDOM.render(
