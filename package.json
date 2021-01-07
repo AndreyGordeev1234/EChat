@@ -87,8 +87,11 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "gen-env": "npx gen-env-types .env -o src/env.d.ts -e .",
-    "coverage": "npm test -- --coverage --watchAll=false"
+    "coverage": "npm test -- --coverage --watchAll=false",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
+  "homepage": "https://andreygordeev1234.github.io/EChat",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -115,6 +118,7 @@
     "@wojtekmaj/enzyme-adapter-react-17": "^0.4.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
+    "gh-pages": "^3.1.0",
     "redux-mock-store": "^1.5.4"
   },
   "jest": {
