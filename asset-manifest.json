@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/EChat/static/css/main.a9d54977.chunk.css",
-    "main.js": "/EChat/static/js/main.64ccda7c.chunk.js",
-    "main.js.map": "/EChat/static/js/main.64ccda7c.chunk.js.map",
+    "main.js": "/EChat/static/js/main.a57400ba.chunk.js",
+    "main.js.map": "/EChat/static/js/main.a57400ba.chunk.js.map",
     "runtime-main.js": "/EChat/static/js/runtime-main.aec20dbb.js",
     "runtime-main.js.map": "/EChat/static/js/runtime-main.aec20dbb.js.map",
-    "static/js/2.576f5efd.chunk.js": "/EChat/static/js/2.576f5efd.chunk.js",
-    "static/js/2.576f5efd.chunk.js.map": "/EChat/static/js/2.576f5efd.chunk.js.map",
+    "static/js/2.42a39ca3.chunk.js": "/EChat/static/js/2.42a39ca3.chunk.js",
+    "static/js/2.42a39ca3.chunk.js.map": "/EChat/static/js/2.42a39ca3.chunk.js.map",
     "static/js/3.89025467.chunk.js": "/EChat/static/js/3.89025467.chunk.js",
     "static/js/3.89025467.chunk.js.map": "/EChat/static/js/3.89025467.chunk.js.map",
     "index.html": "/EChat/index.html",
     "static/css/main.a9d54977.chunk.css.map": "/EChat/static/css/main.a9d54977.chunk.css.map",
-    "static/js/2.576f5efd.chunk.js.LICENSE.txt": "/EChat/static/js/2.576f5efd.chunk.js.LICENSE.txt",
+    "static/js/2.42a39ca3.chunk.js.LICENSE.txt": "/EChat/static/js/2.42a39ca3.chunk.js.LICENSE.txt",
     "static/js/3.89025467.chunk.js.LICENSE.txt": "/EChat/static/js/3.89025467.chunk.js.LICENSE.txt",
     "static/media/message.mp3": "/EChat/static/media/message.f1aedf04.mp3",
     "static/media/ChatsNav.scss": "/EChat/static/media/nav-bottom-line.e3aad4b0.svg",
@@ -24,8 +24,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.aec20dbb.js",
-    "static/js/2.576f5efd.chunk.js",
+    "static/js/2.42a39ca3.chunk.js",
     "static/css/main.a9d54977.chunk.css",
-    "static/js/main.64ccda7c.chunk.js"
+    "static/js/main.a57400ba.chunk.js"
   ]
 }
