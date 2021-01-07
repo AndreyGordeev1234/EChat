@@ -6,7 +6,7 @@ import Messages from '../Messages';
 import './Chat.scss';
 import { NoDialog } from './NoDialog';
 
-export const Chat: React.FC<{}> = ({}) => {
+export const Chat: React.FC<{}> = () => {
   const dialog = useSelector((state) => (state as State).messages.dialog);
   const loading = useSelector((state) => (state as State).messages.loading);
 

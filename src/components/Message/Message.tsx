@@ -1,6 +1,5 @@
 import React from 'react';
 import './Message.scss';
-import profilePic from '../../assets/images/profile-picture.png';
 import { Message as MessageInterface, User } from '../../reducers/types';
 import { fromUnixToDate } from '../../utils/fromUnixToDate';
 
