@@ -1,0 +1,75 @@
+@import '../../styles/variables';
+@import '../../styles/placeholders';
+
+.dialog {
+  @extend %button-as-div;
+  display: flex;
+  padding: 15px;
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+  outline: none;
+
+  &:focus {
+    border-radius: $border-radius;
+    border: 1px solid $text-primary;
+  }
+
+  &_active {
+    background-color: $background-secondary;
+    box-shadow: 0px 8px 40px rgba(0, 72, 251, 0.3);
+    border-radius: $border-radius;
+    color: $text-ternary;
+  }
+
+  &__image {
+    @extend %profile-image-container;
+  }
+
+  &__info {
+    padding-left: 15px;
+  }
+
+  &__name {
+    font-weight: 600;
+    line-height: 18px;
+    margin-top: 2px;
+    width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__text {
+    margin-top: 3px;
+    font: {
+      size: 10px;
+      weight: 300;
+    }
+    line-height: 15px;
+    width: 200px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__time {
+    font: {
+      family: $font-secondary;
+      size: 10px;
+    }
+    position: absolute;
+    right: 15px;
+    color: $text-quaternary;
+    line-height: 12px;
+
+    &_active {
+      color: $text-secondary;
+    }
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}

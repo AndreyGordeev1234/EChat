@@ -1,0 +1,35 @@
+@import '../../styles/variables';
+
+.chat {
+  position: relative;
+
+  &__wrapper {
+    padding: 30px 60px;
+    height: 100%;
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    row-gap: 40px;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    line-height: 18px;
+    height: 20px;
+  }
+
+  &__main {
+    display: grid;
+    grid-template-rows: 1fr min-content;
+    row-gap: 40px;
+  }
+
+  &__no-dialog,
+  &__loading {
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+  }
+}

@@ -1,0 +1,87 @@
+@import '../../styles/placeholders';
+@import '../../styles/variables';
+
+.message {
+  align-self: flex-end;
+  margin-top: 10px;
+  height: fit-content;
+  overflow: visible;
+
+  &:not(.message_first) &__user {
+    display: none;
+  }
+
+  &:not(.message_first) &__image {
+    visibility: hidden;
+  }
+
+  &_others {
+    align-self: flex-start;
+  }
+
+  &__user {
+    font-weight: 600;
+    line-height: 18px;
+    text-align: right;
+
+    &_others {
+      text-align: left;
+    }
+  }
+
+  &__main {
+    margin-top: 9px;
+    display: flex;
+  }
+
+  &__info {
+    text-align: right;
+    border-radius: $border-radius 0px $border-radius $border-radius;
+    background: $background-quaternary;
+    padding: 16px 20px 14px 20px;
+
+    &_others {
+      order: 1;
+      border-radius: 0px 14px 14px 14px;
+      background: $background-primary;
+      text-align: left;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    line-height: 18px;
+    color: $text-secondary;
+
+    &_others {
+      color: $text-primary;
+    }
+    max-width: 50vw;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
+  &__time {
+    margin-top: 6px;
+    font: {
+      family: $font-secondary;
+      size: 10px;
+    }
+    color: $text-secondary;
+    opacity: 0.6;
+
+    &_others {
+      color: $text-primary;
+    }
+  }
+
+  &__image {
+    @extend %profile-image-container;
+    margin-left: 10px;
+
+    &_others {
+      margin-left: 0;
+      margin-right: 10px;
+    }
+  }
+}

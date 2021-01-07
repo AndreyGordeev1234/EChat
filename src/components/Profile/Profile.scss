@@ -1,0 +1,121 @@
+@import '../../styles/variables';
+@import '../../styles/placeholders';
+
+.profile {
+  display: flex;
+  padding-left: 35px;
+  padding-top: 30px;
+  background-color: $background-primary;
+  border-radius: 0px 0px $border-radius $border-radius;
+  position: relative;
+
+  &__image {
+    @extend %profile-image-container;
+  }
+
+  &__details {
+    padding-left: 15px;
+  }
+
+  &__name {
+    font: {
+      weight: 600;
+      size: 14px;
+    }
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 14px;
+    margin-top: 5px;
+  }
+
+  &__status {
+    @extend %button-as-div;
+    width: fit-content;
+    margin-top: 5px;
+    background-color: $background-secondary;
+    display: flex;
+    align-items: center;
+    border-radius: $border-radius;
+    padding: 3px 6px;
+    position: relative;
+    outline: none;
+
+    &:focus {
+      border: 0.5px solid $text-primary;
+    }
+
+    &-indicator {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    &-text {
+      margin-left: 8px;
+      color: $text-ternary;
+      font-size: 10px;
+      line-height: 15px;
+      padding-right: 16px;
+
+      &::after {
+        position: absolute;
+        right: 7px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: inline-block;
+        content: '';
+        background: url('../../assets/images/svg/profile-status-arrow.svg')
+          center no-repeat;
+        width: 10px;
+        height: 12px;
+      }
+    }
+  }
+
+  &__settings {
+    @extend %button-as-div;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    height: fit-content;
+
+    &-ellipse {
+      width: 5px;
+      height: 5px;
+      background-color: $background-secondary;
+      border-radius: 50%;
+      margin-top: 3px;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__settings-tab {
+    position: absolute;
+    right: 20px;
+    top: 45px;
+    width: 90px;
+    height: 40px;
+    background-color: transparentize(
+      $color: $background-secondary,
+      $amount: 0.05
+    );
+    border-radius: $border-radius 0 $border-radius $border-radius;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__sign-out {
+  }
+}
+
+.sign-out {
+  @extend %button-as-div;
+  padding: 5px;
+  color: $text-secondary;
+}

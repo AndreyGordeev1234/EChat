@@ -1,0 +1,8 @@
+@import '../../styles/variables';
+
+.messages {
+  display: flex;
+  flex-direction: column-reverse;
+  overflow-y: auto;
+  padding: 0 10px;
+}

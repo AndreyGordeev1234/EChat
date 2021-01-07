@@ -1,0 +1,18 @@
+@import '../../styles/variables';
+
+.dialogs {
+  background-color: $background-primary;
+  border-radius: $border-radius $border-radius 0px 0px;
+  overflow-y: auto;
+
+  &__wrapper {
+    padding: 24px 20px 50px;
+  }
+
+  &__no-dialogs,
+  &__loading {
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+  }
+}

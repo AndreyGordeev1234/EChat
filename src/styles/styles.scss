@@ -1,0 +1,20 @@
+@import 'reset';
+@import 'variables';
+
+html {
+  box-sizing: border-box;
+  font: {
+    size: 12px;
+    family: $font-primary;
+  }
+  color: $text-primary;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  font: inherit;
+  color: inherit;
+  overflow: hidden;
+}
