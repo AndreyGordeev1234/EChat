@@ -6,7 +6,7 @@
   border-top: 1px solid #d0d9df;
 
   &__wrapper {
-    padding: 25px 33px 0px 33px;
+    padding: 0 33px 0px 33px;
     height: 100%;
   }
 
@@ -40,11 +40,17 @@
     height: 100%;
     width: 100%;
     position: relative;
+    outline: none;
+
+    &:focus {
+      border: 1px solid $background-secondary;
+      border-bottom: 0px;
+    }
   }
 
   &__icon {
     position: absolute;
-    top: 0;
+    top: 25px;
     left: 50%;
     transform: translateX(-50%);
   }

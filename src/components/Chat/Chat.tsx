@@ -4,10 +4,9 @@ import { State } from '../../reducers/types';
 import MessageForm from '../MessageForm';
 import Messages from '../Messages';
 import './Chat.scss';
+import { NoDialog } from './NoDialog';
 
-interface Props {}
-
-export const Chat: React.FC<Props> = ({}) => {
+export const Chat: React.FC<{}> = ({}) => {
   const dialog = useSelector((state) => (state as State).messages.dialog);
   const loading = useSelector((state) => (state as State).messages.loading);
 
@@ -22,9 +21,9 @@ export const Chat: React.FC<Props> = ({}) => {
           {dialog ? (
             <MessageForm />
           ) : loading ? (
-            <div>Loading...</div>
+            <div className="chat__loading">Loading...</div>
           ) : (
-            <div>No dialog loaded...</div>
+            <NoDialog />
           )}
         </main>
       </div>

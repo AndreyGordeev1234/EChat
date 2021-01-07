@@ -32,10 +32,10 @@ import {
 import { Dialog, DialogInfo, User } from '../reducers/types';
 import { Api } from '../service/firebaseApi';
 
-function* fetchUser(action: UserFetchAction) {
+export function* fetchUser(action: UserFetchAction) {
   try {
     yield put(userRequested());
-    const data: User = yield call(Api.signInWithGoogle, action.payload);
+    const data: User | null = yield call(Api.signInWithGoogle, action.payload);
     if (data) yield put(userLoaded(data));
     else yield put(userError('not authenticated'));
   } catch (error) {
@@ -43,7 +43,7 @@ function* fetchUser(action: UserFetchAction) {
   }
 }
 
-function* fetchUsers() {
+export function* fetchUsers() {
   try {
     yield put(usersRequested());
     const data: User[] = yield call(Api.getUsers);
@@ -53,10 +53,10 @@ function* fetchUsers() {
   }
 }
 
-function* fetchMessages(action: MessagesFetchAction) {
+export function* fetchMessages(action: MessagesFetchAction) {
   try {
     yield put(messagesRequested());
-    const data: Dialog = yield call(Api.getMessages, action.payload);
+    const data: Dialog | null = yield call(Api.getMessages, action.payload);
     if (data) yield put(messagesLoaded(data));
     else yield put(messagesError("couldn't find dialog"));
   } catch (error) {
@@ -64,7 +64,7 @@ function* fetchMessages(action: MessagesFetchAction) {
   }
 }
 
-function* fetchSendMessage(action: SendMessageFetchAction) {
+export function* fetchSendMessage(action: SendMessageFetchAction) {
   try {
     yield put(sendMessageRequested());
     const data: { status: boolean } | null = yield call(
@@ -78,7 +78,7 @@ function* fetchSendMessage(action: SendMessageFetchAction) {
   }
 }
 
-function* fetchDialogs(action: DialogsFetchAction) {
+export function* fetchDialogs(action: DialogsFetchAction) {
   try {
     yield put(dialogsRequested());
     const data: DialogInfo[] = yield call(Api.getDialogs, action.payload);

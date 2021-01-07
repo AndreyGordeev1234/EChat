@@ -1,33 +1,39 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchUsers } from '../../actions';
 import { State } from '../../reducers/types';
+import { FindInput } from '../FindInput/FindInput';
 import UserInFind from '../UserInFind';
 import './Find.scss';
 
-interface Props {}
-
-export const Find: React.FC<Props> = ({}) => {
+export const Find: React.FC<{}> = () => {
   const dispatch = useDispatch();
-  const { users, loading } = useSelector((state) => (state as State).users);
+  const loading = useSelector((state) => (state as State).users.loading);
+  const users = useSelector((state) => (state as State).users.users);
+  const [filteredUsers, setFilteredUsers] = useState(users);
+
+  const filterUsers = (word: string) => {
+    setFilteredUsers(users.filter((user) => user.email.includes(word)));
+  };
 
   useEffect(() => {
     dispatch(fetchUsers());
-  }, []);
+  }, [dispatch]);
+
+  useEffect(() => {
+    setFilteredUsers(users);
+  }, [users]);
 
   return (
     <div className="find">
-      <input
-        type="email"
-        name="email"
-        className="find__input"
-        placeholder="Type email here..."
-      />
+      <FindInput onFilter={filterUsers} />
       <div className="find__wrapper">
         {loading ? (
-          <div>loading...</div>
+          <div className="find__loading">loading...</div>
         ) : (
-          users.map((user) => <UserInFind key={user.email} user={user} />)
+          filteredUsers.map((user) => (
+            <UserInFind key={user.email} user={user} />
+          ))
         )}
       </div>
     </div>

@@ -15,6 +15,7 @@ export interface Dialog {
   messages: Message[];
   user1: User;
   user2: User;
+  id: string;
 }
 
 export interface UserState {

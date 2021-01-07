@@ -22,6 +22,10 @@
       weight: 600;
       size: 14px;
     }
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     line-height: 14px;
     margin-top: 5px;
   }
@@ -36,6 +40,11 @@
     border-radius: $border-radius;
     padding: 3px 6px;
     position: relative;
+    outline: none;
+
+    &:focus {
+      border: 0.5px solid $text-primary;
+    }
 
     &-indicator {
       width: 8px;
@@ -84,4 +93,29 @@
       }
     }
   }
+
+  &__settings-tab {
+    position: absolute;
+    right: 20px;
+    top: 45px;
+    width: 90px;
+    height: 40px;
+    background-color: transparentize(
+      $color: $background-secondary,
+      $amount: 0.05
+    );
+    border-radius: $border-radius 0 $border-radius $border-radius;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__sign-out {
+  }
+}
+
+.sign-out {
+  @extend %button-as-div;
+  padding: 5px;
+  color: $text-secondary;
 }

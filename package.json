@@ -86,7 +86,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "gen-env": "npx gen-env-types .env -o src/env.d.ts -e ."
+    "gen-env": "npx gen-env-types .env -o src/env.d.ts -e .",
+    "coverage": "npm test -- --coverage --watchAll=false"
   },
   "eslintConfig": {
     "extends": [
@@ -107,7 +108,14 @@
     ]
   },
   "devDependencies": {
-    "@types/react-redux": "^7.1.14"
+    "@types/enzyme": "^3.10.8",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/react-redux": "^7.1.14",
+    "@types/redux-mock-store": "^1.0.2",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.4.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "redux-mock-store": "^1.5.4"
   },
   "jest": {
     "roots": [

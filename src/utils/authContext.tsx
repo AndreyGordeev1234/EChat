@@ -1,4 +1,4 @@
-import React, { ProviderProps, useContext } from 'react';
+import React, { useContext } from 'react';
 import firebase from 'firebase/app';
 
 const AuthContext = React.createContext({} as firebase.auth.Auth);

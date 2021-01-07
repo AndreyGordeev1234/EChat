@@ -1,6 +1,5 @@
 import React from 'react';
 import './Dialog.scss';
-import profilePic from '../../assets/images/profile-picture.png';
 import { fromUnixToShortDate } from '../../utils/fromUnixToDate';
 import { State, User } from '../../reducers/types';
 import { useDispatch, useSelector } from 'react-redux';
@@ -20,16 +19,16 @@ export const Dialog: React.FC<Props> = ({
   isActive = false,
 }) => {
   const dispatch = useDispatch();
-  const email = useSelector((state) => (state as State).user.user!.email);
+  const authUser = useSelector((state) => (state as State).user.user);
 
-  const loadDialog = (from: string, to: string) => {
-    dispatch(fetchMessages(from, to));
+  const loadDialog = (from: string | undefined, to: string) => {
+    if (from) dispatch(fetchMessages(from, to));
   };
 
   return (
     <button
       className={isActive ? 'dialog dialog_active' : 'dialog'}
-      onClick={() => loadDialog(email, user.email)}
+      onClick={() => loadDialog(authUser?.email, user.email)}
     >
       <div
         className="dialog__image"

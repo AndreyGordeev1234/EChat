@@ -70,5 +70,5 @@ export const useDialogSub = (dialog: Dialog | null, user: User | null) => {
     return () => {
       sub();
     };
-  }, [db, dialog?.user1, dialog?.user2, user, dispatch]);
+  }, [db, dialog?.user1, dialog?.user2, user, dispatch, play]);
 };
