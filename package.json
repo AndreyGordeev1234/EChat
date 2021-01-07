@@ -1,6 +1,6 @@
 {
   "name": "echat",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@babel/core": "7.12.3",
@@ -87,7 +87,7 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "gen-env": "npx gen-env-types .env -o src/env.d.ts -e .",
-    "coverage": "npm test -- --coverage --watchAll=false",
+    "coverage": "yarn test -- --coverage --watchAll=false",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build"
   },
