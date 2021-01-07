@@ -5,11 +5,9 @@ import Find from '../Find';
 import Profile from '../Profile';
 import './Chats.scss';
 
-interface Props {}
-
 export type ActivePage = 'Dialogs' | 'Find';
 
-export const Chats: React.FC<Props> = ({}) => {
+export const Chats: React.FC<{}> = ({}) => {
   const [page, setPage] = useState<ActivePage>('Dialogs');
   const setActivePage = (page: ActivePage) => {
     setPage(page);

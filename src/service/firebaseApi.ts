@@ -10,7 +10,10 @@ export class Api {
     const provider = new firebase.auth.GoogleAuthProvider();
     const { user } = await auth.signInWithPopup(provider);
 
-    if (!user) return null;
+    if (!user) {
+      auth.signOut();
+      return null;
+    }
 
     if (user) {
       const userRef = db.collection('users').doc(user?.email!);
@@ -86,17 +89,17 @@ export class Api {
     };
 
     let dialogRef = db.collection('dialogs').doc(`${from}->${to}`);
-
-    const doc = await dialogRef.get();
+    let doc = await dialogRef.get();
 
     if (!doc.exists) {
       dialogRef = db.collection('dialogs').doc(`${to}->${from}`);
-      const doc = await dialogRef.get();
+      doc = await dialogRef.get();
       if (!doc.exists) {
         return {
           user1,
           user2,
           messages: [],
+          id: '',
         };
       }
     }
@@ -106,7 +109,12 @@ export class Api {
     const snapshot = await messagesRef.get();
     if (snapshot.empty) {
       console.log('No matching documents.');
-      return null;
+      return {
+        user1,
+        user2,
+        messages: [],
+        id: '',
+      };
     }
 
     const messages: Message[] = [];
@@ -123,6 +131,7 @@ export class Api {
       user1,
       user2,
       messages,
+      id: doc.id,
     };
   }
 
@@ -189,7 +198,6 @@ export class Api {
 
         const anotherUser = userNum === 1 ? doc.data().user2 : doc.data().user1;
         if (user === anotherUser) isDoublicate = true;
-        console.log(anotherUser);
         let messageText = '';
         let messageDate: any = null;
         const messagesDocs = await db
@@ -219,13 +227,11 @@ export class Api {
 
     let dialogRef = db.collection('dialogs').where('user1', '==', user);
     let snapshot = await dialogRef.get();
-    let userNum = 1;
 
     await getDialogsFromSnaphot(snapshot, 1);
 
     dialogRef = db.collection('dialogs').where('user2', '==', user);
     snapshot = await dialogRef.get();
-    userNum = 2;
 
     await getDialogsFromSnaphot(snapshot, 2);
 

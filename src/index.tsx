@@ -16,7 +16,25 @@ firebase.initializeApp({
   appId: '1:875853984653:web:fcdffab894b219f982c3c4',
 });
 
-firebase.firestore().enablePersistence();
+firebase.firestore().settings({
+  cacheSizeBytes: firebase.firestore.CACHE_SIZE_UNLIMITED,
+});
+
+firebase
+  .firestore()
+  .enablePersistence()
+  .catch(function (err) {
+    console.log(err);
+    if (err.code === 'failed-precondition') {
+      // Multiple tabs open, persistence can only be enabled
+      // in one tab at a a time.
+      // ...
+    } else if (err.code === 'unimplemented') {
+      // The current browser does not support all of the
+      // features required to enable persistence
+      // ...
+    }
+  });
 
 const auth = firebase.auth();
 

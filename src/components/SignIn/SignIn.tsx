@@ -2,6 +2,7 @@ import React from 'react';
 import { useAuth } from '../../utils/authContext';
 import { useDispatch } from 'react-redux';
 import { fetchUser } from '../../actions';
+import './SignIn.scss';
 
 interface Props {}
 
@@ -14,13 +15,10 @@ export const SignIn: React.FC<Props> = ({}) => {
   };
 
   return (
-    <>
-      <button className="sign-in" onClick={signInWithGoogle}>
+    <div className="sign-in">
+      <button className="sign-in__btn" onClick={signInWithGoogle}>
         Sign in with Google
       </button>
-      <p>
-        Do not violate the community guidelines or you will be banned for life!
-      </p>
-    </>
+    </div>
   );
 };

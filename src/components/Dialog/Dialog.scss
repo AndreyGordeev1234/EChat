@@ -8,6 +8,12 @@
   position: relative;
   width: 100%;
   margin-bottom: 20px;
+  outline: none;
+
+  &:focus {
+    border-radius: $border-radius;
+    border: 1px solid $text-primary;
+  }
 
   &_active {
     background-color: $background-secondary;
@@ -28,6 +34,10 @@
     font-weight: 600;
     line-height: 18px;
     margin-top: 2px;
+    width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &__text {
@@ -37,6 +47,11 @@
       weight: 300;
     }
     line-height: 15px;
+    width: 200px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &__time {

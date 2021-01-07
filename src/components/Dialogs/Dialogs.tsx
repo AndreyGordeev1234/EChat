@@ -6,6 +6,7 @@ import './Dialogs.scss';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useAuth } from '../../utils/authContext';
 import { State } from '../../reducers/types';
+import { NoDialogs } from './NoDialogs';
 
 interface Props {}
 
@@ -15,36 +16,32 @@ export const Dialogs: React.FC<Props> = ({}) => {
   const [user, loadingUser] = useAuthState(auth);
   const dialogs = useSelector((state) => (state as State).dialogs.dialogs);
   const loading = useSelector((state) => (state as State).dialogs.loading);
+  const dialogId = useSelector((state) => (state as State).messages.dialog?.id);
 
   useEffect(() => {
     if (user && !loadingUser) dispatch(fetchDialogs(user.email));
-  }, [user]);
+  }, [user, dispatch]);
 
   return (
     <div className="chats__bottom dialogs">
       <div className="dialogs__wrapper">
         {dialogs.length ? (
-          dialogs.map((dialog, i) => {
+          dialogs.map((dialog) => {
             return (
               <Dialog
                 key={dialog.id}
                 user={dialog.anotherUser}
                 message={dialog.messageText}
                 date={dialog.messageDate}
+                isActive={dialog.id === dialogId}
               />
-              // <div key={i}>lol</div>
             );
           })
         ) : loading ? (
-          <div>Loading...</div>
+          <div className="dialogs__loading">Loading...</div>
         ) : (
-          <div>No dialogs yet</div>
+          <NoDialogs />
         )}
-        {/* <Dialog isActive />
-        <Dialog />
-        <Dialog />
-        <Dialog />
-        <Dialog /> */}
       </div>
     </div>
   );

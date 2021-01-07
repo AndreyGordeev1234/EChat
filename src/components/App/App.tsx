@@ -8,7 +8,6 @@ import 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useAuth } from '../../utils/authContext';
 import SignIn from '../SignIn';
-import SignOut from '../SignOut';
 import { useDispatch } from 'react-redux';
 import { loadUser } from '../../actions';
 
@@ -26,18 +25,17 @@ export const App: React.FC<{}> = () => {
           photoUrl: user.photoURL,
         }),
       );
-  }, [user]);
+  }, [dispatch, user]);
 
   return (
     <>
-      {/* <SignOut /> */}
       {user ? (
         <div className="app">
           <Chats />
           <Chat />
         </div>
       ) : loading ? (
-        <div>Loading...</div>
+        <div className="app-loading">Loading...</div>
       ) : (
         <SignIn />
       )}

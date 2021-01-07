@@ -56,6 +56,9 @@
     &_others {
       color: $text-primary;
     }
+    max-width: 50vw;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
 
   &__time {

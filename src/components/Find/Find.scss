@@ -17,4 +17,10 @@
   &__wrapper {
     padding: 24px 20px;
   }
+
+  &__loading {
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+  }
 }
