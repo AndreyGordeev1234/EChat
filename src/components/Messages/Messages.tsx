@@ -5,9 +5,7 @@ import { Message as MessageComp } from '../Message/Message';
 import './Messages.scss';
 import { useDialogSub } from '../../utils/useDialogSub';
 
-interface Props {}
-
-export const Messages: React.FC<Props> = ({}) => {
+export const Messages: React.FC<{}> = () => {
   const dialog = useSelector((state) => (state as State).messages.dialog);
   const user = useSelector((state) => (state as State).user.user);
   const isMy = (message: Message) => {

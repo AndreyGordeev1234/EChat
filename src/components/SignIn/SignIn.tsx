@@ -4,9 +4,7 @@ import { useDispatch } from 'react-redux';
 import { fetchUser } from '../../actions';
 import './SignIn.scss';
 
-interface Props {}
-
-export const SignIn: React.FC<Props> = ({}) => {
+export const SignIn: React.FC<{}> = () => {
   const auth = useAuth();
   const dispatch = useDispatch();
 

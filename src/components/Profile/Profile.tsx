@@ -4,9 +4,7 @@ import { useSelector } from 'react-redux';
 import { State } from '../../reducers/types';
 import { useAuth } from '../../utils/authContext';
 
-interface Props {}
-
-export const Profile: React.FC<Props> = ({}) => {
+export const Profile: React.FC<{}> = () => {
   const user = useSelector((state) => (state as State).user.user);
   const [show, setShow] = useState(false);
   const auth = useAuth();

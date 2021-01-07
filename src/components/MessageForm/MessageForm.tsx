@@ -5,9 +5,7 @@ import { State } from '../../reducers/types';
 import { validateMessage } from '../../utils/validateFields';
 import './MessageForm.scss';
 
-interface Props {}
-
-export const MessageForm: React.FC<Props> = ({}) => {
+export const MessageForm: React.FC<{}> = () => {
   const dialog = useSelector((state) => (state as State).messages.dialog);
   const user = useSelector((state) => (state as State).user.user);
   const [message, setMessage] = useState('');

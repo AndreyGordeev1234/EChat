@@ -8,9 +8,7 @@ import { useAuth } from '../../utils/authContext';
 import { State } from '../../reducers/types';
 import { NoDialogs } from './NoDialogs';
 
-interface Props {}
-
-export const Dialogs: React.FC<Props> = ({}) => {
+export const Dialogs: React.FC<{}> = () => {
   const dispatch = useDispatch();
   const auth = useAuth();
   const [user, loadingUser] = useAuthState(auth);
@@ -20,7 +18,7 @@ export const Dialogs: React.FC<Props> = ({}) => {
 
   useEffect(() => {
     if (user && !loadingUser) dispatch(fetchDialogs(user.email));
-  }, [user, dispatch]);
+  }, [user, dispatch, loadingUser]);
 
   return (
     <div className="chats__bottom dialogs">

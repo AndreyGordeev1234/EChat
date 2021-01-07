@@ -7,7 +7,7 @@ import './Chats.scss';
 
 export type ActivePage = 'Dialogs' | 'Find';
 
-export const Chats: React.FC<{}> = ({}) => {
+export const Chats: React.FC<{}> = () => {
   const [page, setPage] = useState<ActivePage>('Dialogs');
   const setActivePage = (page: ActivePage) => {
     setPage(page);
