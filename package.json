@@ -87,7 +87,7 @@
     "test": "node scripts/test.js",
     "gen-env": "npx gen-env-types .env -o src/env.d.ts -e .",
     "coverage": "npm test -- --coverage --watchAll=false",
-    "predeploy": "npm build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "homepage": "https://andreygordeev1234.github.io/EChat",
